@@ -7,7 +7,7 @@ const RankingGrid = ({ items, imgArr, drag, allowDrop, drop }) => {
     const cellCollectionBottom = [];
     const cellCollectionWorst = [];
 
-    function pushCellMarkupToArr(cellCollection, rankNum, rowLabel, labelClass) {
+    function pushCellMarkupToArr(cellCollection, rankNum) {
         if (rankNum > 0) {
             var item = items.find(o => o.ranking === rankNum);
             cellCollection.push(
@@ -17,46 +17,29 @@ const RankingGrid = ({ items, imgArr, drag, allowDrop, drop }) => {
                     : null}
             </div>);
         }
-        else {
-            cellCollection.push(
-            <div className={`row-label ${labelClass}`}>
-                <h4>{rowLabel}</h4>
-            </div>
-            );
-        }
     }
 
     function createCellsForRow(rowNum) {
         var rankNum = 0;
         var currCollection = [];
-        var label = "";
-        var labelClass = "";
-        const numCells = 5;
+        const numCells = 8;
 
         for (var a = 1; a <= numCells; a++) {
             rankNum = (a === 1) ? 0 : (numCells * (rowNum - 1)) + a - rowNum;
 
             if (rowNum === 1) {
                 currCollection = cellCollectionTop;
-                label = "S Tier";
-                labelClass = "label-top-tier";
             }
             else if (rowNum === 2) {
                 currCollection = cellCollectionMiddle;
-                label = "A Tier";
-                labelClass = "label-middle-tier";
             }
             else if (rowNum === 3) {
                 currCollection = cellCollectionBottom;
-                label = "B Tier";
-                labelClass = "label-bottom-tier";
             }
             else if (rowNum === 4) {
                 currCollection = cellCollectionWorst;
-                label = "C Tier";
-                labelClass = "label-worst-tier";
             }
-            pushCellMarkupToArr(currCollection, rankNum, label, labelClass);
+            pushCellMarkupToArr(currCollection, rankNum);
 
         }
 
@@ -71,10 +54,27 @@ const RankingGrid = ({ items, imgArr, drag, allowDrop, drop }) => {
 
     function createRowsForGrid() {
 
-        rankingGrid.push(<div className="rank-row">{cellCollectionTop}</div>);
-        rankingGrid.push(<div className="rank-row">{cellCollectionMiddle}</div>);
-        rankingGrid.push(<div className="rank-row">{cellCollectionBottom}</div>);
-        rankingGrid.push(<div className="rank-row">{cellCollectionWorst}</div>);
+        rankingGrid.push(
+            <div className="parent-row" >
+                <div className="tier-label label-top-tier">"S Tier"</div>
+                <div className="rank-row">{cellCollectionTop}</div>
+            </div>);
+        rankingGrid.push(
+            <div className="parent-row" >
+                <div className="tier-label label-middle-tier">"A Tier"</div>
+                <div className="rank-row">{cellCollectionMiddle}</div>
+            </div>);
+        rankingGrid.push(
+            <div className="parent-row" >
+                <div className="tier-label label-bottom-tier">"B Tier"</div>
+                <div className="rank-row">{cellCollectionBottom}</div>
+            </div>);
+        rankingGrid.push(
+            <div className="parent-row" >
+                <div className="tier-label label-worst-tier">"C Tier"</div>
+                <div className="rank-row">{cellCollectionWorst}</div>
+            </div>);
+
 
         return rankingGrid;
     }
