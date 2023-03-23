@@ -56,7 +56,8 @@ main {
     margin-top: 3px;
     margin-bottom: 4px;
     border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1)
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
+    background-color: gray;
 }
 
 .top-tier {
@@ -80,6 +81,22 @@ main {
     text-align: center;
     display: flex;
     align-items: center;
+}
+
+.label-top-tier {
+    background-color: red; /* specific color for S tier row label */
+}
+
+.label-middle-tier {
+    background-color: orange; /* specific color for A tier row label */
+}
+
+.label-bottom-tier {
+    background-color: yellow; /* specific color for B tier row label */
+}
+
+.label-worst-tier {
+    background-color: green; /* specific color for C tier row label */
 }
 
 .reload {
