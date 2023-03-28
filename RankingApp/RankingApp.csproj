@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\images\movies\" />
+    <Folder Include="ClientApp\src\images\pokemon\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

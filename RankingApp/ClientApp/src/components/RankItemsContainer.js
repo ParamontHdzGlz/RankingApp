@@ -2,12 +2,12 @@
 import RankItems from './RankItems';
 
 const RankItemsContainer = ({ dataType, imgArr }) => {
-    const albumLocalStorageKey = "albums";
+    const pokemonLocalStorageKey = "pokemon_storage";
     const movieLocalStorageKey = "movies";
 
     var localStorageKey = "";
 
-    const [albumItems, setAlbumItems] = useState(JSON.parse(localStorage.getItem(albumLocalStorageKey)));
+    const [pokemonItems, setPokemonItems] = useState(JSON.parse(localStorage.getItem(pokemonLocalStorageKey)));
     const [movieItems, setMovieItems] = useState(JSON.parse(localStorage.getItem(movieLocalStorageKey)));
 
 
@@ -22,9 +22,9 @@ const RankItemsContainer = ({ dataType, imgArr }) => {
 
     }
     else if (dataType === 2) {
-        data = albumItems;
-        setFunc = setAlbumItems;
-        localStorageKey = albumLocalStorageKey;
+        data = pokemonItems;
+        setFunc = setPokemonItems;
+        localStorageKey = pokemonLocalStorageKey;
 
     }
 
