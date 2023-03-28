@@ -25,6 +25,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\WeatherForecastController.cs" />
+    <Compile Remove="WeatherForecast.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\components\Counter.js" />
+    <None Remove="ClientApp\src\components\FetchData.js" />
+    <None Remove="ClientApp\src\components\Home.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ClientApp\src\images\movies\" />
     <Folder Include="ClientApp\src\images\pokemon\" />
   </ItemGroup>

@@ -8,19 +8,11 @@ import PokemonImageArr from "./components/PokemonImages.js"
 const AppRoutes = [
     {
         index: true,
-        element: < RankItemsContainer dataType={1} imgArr={MovieImageArr } />
-    },
-    {
-        path: '/counter',
-        element: <Counter />
-    },
-    {
-        path: '/fetch-data',
-        element: <FetchData />
+        element: < RankItemsContainer dataType={2} imgArr={PokemonImageArr} />
     },
     {
         path: '/rank-items',
-        element: < RankItemsContainer dataType={2} imgArr={PokemonImageArr } />
+        element: < RankItemsContainer dataType={1} imgArr={MovieImageArr} />
     }
 
 ];
