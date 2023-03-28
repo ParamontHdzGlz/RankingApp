@@ -7,7 +7,7 @@ import MovieImageArr from "./components/MovieImages.js";
 const AppRoutes = [
     {
         index: true,
-        element: <Home />
+        element: < RankItemsContainer dataType={1} imgArr={MovieImageArr} />
     },
     {
         path: '/counter',
